@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Oriol Giner Díaz - Software Developer">
+	<main>
+		<portada>
+			<video src="video.mp4" muted loop autoplay></video>
+
+		</portada>
+	</main>
+</Layout>
+
+<style>
+	portada {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+		background-color: black;
+	}
+	portada video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+</style>
+
