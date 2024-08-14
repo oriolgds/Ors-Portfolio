@@ -1,6 +1,6 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,34 +8,112 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Oriol Giner Díaz es un desarrollador de software versàtil, apasionado y con mucha energia. Ha participado múltiples proyectos como Tech Gesture o MIP y esta especializado en JS, Angular y desarrollo de apps con Flutter." />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Oriol Giner Díaz es un desarrollador de software versàtil, apasionado y con mucha energia. Ha participado múltiples proyectos como Tech Gesture o MIP y esta especializado en JS, Angular y desarrollo de apps con Flutter."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Foldit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="loading-indicator">
+      <nav>
+        <ul>
+          <li>Inicio</li>
+          <li>Trabajo</li>
+          <li class="active">Contacto</li>
+        </ul>
+      </nav>
+    </div>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--black: #0a1704;
-		--dark-green: #193b0a;
-		--yellow: #e1b62f;
-		--cream: #f8ecc5;
-	}
-	@font-face {
-	    font-family: Benguiat;
-	    src: url("fonts/Benguiat/Benguiat.OTF") format("opentype");
+  :root {
+    --black: #0a1704;
+    --dark-green: #193b0a;
+    --yellow: #e1b62f;
+    --cream: #f8ecc5;
+  }
+  @font-face {
+    font-family: Benguiat;
+    src: url("fonts/Benguiat/Benguiat.OTF") format("opentype");
+  }
+
+  @font-face {
+    font-family: Benguiat;
+    font-weight: bold;
+    src: url("fonts/Benguiat/BenguiatBold.OTF") format("opentype");
+  }
+</style>
+<style is:global>
+  #loading-indicator {
+    z-index: 5;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 3px;
+    border-radius: 50px;
+
+  }
+	#loading-indicator::after {
+		content: '';
+		position: absolute;
+		top: 0px;
+		transform: translateX(-3px);
+		display: flex;
+		width: 426px;
+		z-index: -1;
+		border-radius: 50px;
+
+		height: 100%;
+		background-color: var(--black)
 	}
 
-	@font-face {
-	    font-family: Benguiat;
-	    font-weight: bold;
-	    src: url("fonts/Benguiat/BenguiatBold.OTF") format("opentype");
-	}
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  nav {
+		z-index: 6;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--cream);
+    border: 4px var(--dark-green);
+    padding: 15px 20px;
+    border-radius: 50px;
+  }
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px 10px;
+  }
+  nav ul li {
+    width: 120px;
+    text-align: center;
+    border-radius: 50px;
+    padding: 3px 0px;
+  }
+  nav ul li.active {
+    background-color: var(--yellow);
+  }
 </style>
