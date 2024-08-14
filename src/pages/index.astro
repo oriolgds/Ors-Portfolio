@@ -7,7 +7,9 @@ import Card from '../components/Card.astro';
 	<main>
 		<portada>
 			<video src="video.mp4" muted loop autoplay></video>
-
+			<div id="name">
+				Oriol Giner
+			</div>
 		</portada>
 	</main>
 </Layout>
@@ -20,11 +22,30 @@ import Card from '../components/Card.astro';
 		justify-content: center;
 		height: 100vh;
 		background-color: black;
+		position: relative;
 	}
 	portada video {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+	}
+	portada #name {
+		position: relative;
+		top: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: auto;
+		position: absolute;
+		font-family: Benguiat;
+		font-weight: bold;
+		font-size: 120px;
+		color: var(--dark-green);
+		line-height: 0.9;
+		background-color: var(--yellow);
+
+
 	}
 </style>
 
