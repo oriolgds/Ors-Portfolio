@@ -2,7 +2,6 @@
 interface Props {
   title: string;
 }
-
 const { title } = Astro.props;
 ---
 
@@ -18,6 +17,12 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <!-- Bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,7 +32,15 @@ const { title } = Astro.props;
   </head>
   <body>
     <div id="loading-indicator">
-      <nav>
+      <input type="checkbox" id="check" />
+      <button id="open-menu" aria-label="Menu"
+        ><label for="check">          
+          <span></span>
+          <span></span>
+          <span></span>
+        </label></button
+      >
+      <nav id="nav">
         <ul>
           <li>Inicio</li>
           <li>Trabajo</li>
@@ -56,7 +69,7 @@ const { title } = Astro.props;
     src: url("fonts/Benguiat/BenguiatBold.OTF") format("opentype");
   }
 </style>
-<style is:global>
+<style>
   #loading-indicator {
     z-index: 5;
     position: absolute;
@@ -64,36 +77,33 @@ const { title } = Astro.props;
     right: 10px;
     padding: 3px;
     border-radius: 50px;
-
   }
-	#loading-indicator::after {
-		content: '';
-		position: absolute;
-		top: 0px;
-		transform: translateX(-3px);
-		display: flex;
-		width: 426px;
-		z-index: -1;
-		border-radius: 50px;
+  #open-menu {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    font-size: 60px;
+    background-color: var(--yellow);
+    border-radius: 30px;
+    padding: 10px 15px;
+    border: var(--dark-green) solid 1px;
 
-		height: 100%;
-		background-color: var(--black)
-	}
-
-
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+    display: none;
+    transition: 200ms all;
+    transform: translateY(0px);
+    box-shadow: -1px 12px 49px 1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 12px 49px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 12px 49px 1px rgba(0, 0, 0, 0.75);
   }
+  #open-menu:hover {
+    transform: translateY(-2px);
+    box-shadow: -1px 14px 49px 1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 14px 49px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 14px 49px 1px rgba(0, 0, 0, 0.75);
+  }
+
   nav {
-		z-index: 6;
+    z-index: 6;
     display: flex;
     flex-wrap: wrap;
     background-color: var(--cream);
@@ -108,6 +118,7 @@ const { title } = Astro.props;
     gap: 0px 10px;
   }
   nav ul li {
+    cursor: pointer;
     width: 120px;
     text-align: center;
     border-radius: 50px;
@@ -116,4 +127,95 @@ const { title } = Astro.props;
   nav ul li.active {
     background-color: var(--yellow);
   }
+
+  @media (width <= 890px) {
+    #open-menu {
+      display: block;
+    }
+    nav {
+      transition:
+        500ms filter,
+        700ms transform;
+      width: calc(100vw - 20px);
+      position: fixed;
+      top: 120px;
+      left: 10px;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      /* display: none !important; */
+    }
+    nav {
+      transform: translateY(-20px);
+      filter: opacity(0);
+    }    
+    nav ul {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      gap: 10px 10px;
+    }
+    nav ul li {
+      margin: 5px 0px;
+      padding: 10px 0px;
+    }
+  }
+</style>
+<style>
+  label {
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    cursor: pointer;
+  }
+
+  label span {
+    background: var(--dark-green);
+    border-radius: 10px;
+    height: 7px;
+    margin: 7px 0;
+    transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  }
+
+  span:nth-of-type(1) {
+    width: 50%;
+  }
+
+  span:nth-of-type(2) {
+    width: 100%;
+  }
+
+  span:nth-of-type(3) {
+    width: 75%;
+  }
+
+  input[type="checkbox"] {
+    display: none !important;
+    opacity: 0;
+    position: fixed;
+    top: 10px;
+    right: 0px; 
+    width: 120px;
+    height: 85px;
+  }
+
+  input[type="checkbox"]:checked ~ button#open-menu span:nth-of-type(1) {
+    transform-origin: bottom;
+    transform: rotatez(45deg) translate(8px, 0px);
+  }
+
+  input[type="checkbox"]:checked ~ button#open-menu span:nth-of-type(2) {
+    transform-origin: top;
+    transform: rotatez(-45deg);
+  }
+
+  input[type="checkbox"]:checked ~ button#open-menu span:nth-of-type(3) {
+    transform-origin: bottom;
+    width: 50%;
+    transform: translate(30px, -11px) rotatez(45deg);
+  }
+  input[type="checkbox"]:checked ~ nav {
+      filter: opacity(1);
+      transform: translateY(0px);
+    }
 </style>
