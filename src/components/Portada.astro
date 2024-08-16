@@ -1,0 +1,72 @@
+---
+
+---
+
+
+<portada>
+	<video src="video.mp4" muted loop autoplay></video>
+	<div id="name">Oriol<br />Giner</div>
+	
+</portada>
+<style>
+	portada {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  height: 100vh;
+	  background: url('/video.jpg');
+	  background-position: center;
+	  background-size: cover;
+	  position: relative;
+	}
+	portada video {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	}
+	portada #name {
+	  position: relative;
+	  top: 10px;
+	  left: 10px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  width: auto;
+	  position: absolute;
+	  font-family: "Abril Fatface", serif;
+	  font-weight: 400;
+	  font-style: normal;
+	  font-size: 50px;
+	  color: var(--dark-green);
+	  line-height: 0.9;
+	  background-color: var(--yellow);
+	  padding: 10px;
+	  border-radius: 50px;
+	}
+	@media (width >= 0px) {
+	  portada #name {
+		font-size: 30px;
+	  }
+	}
+	@media (width >= 200px) {
+	  portada #name {
+		font-size: 80px;
+	  }
+	}
+	@media (width >= 300px) {
+	  portada #name {
+		font-size: 100px;
+	  }
+	}
+	@media (width >= 400px) {
+	  portada #name {
+		font-size: 130px;
+	  }
+	}
+	@media (width >= 600px) {
+	  portada #name {
+		font-size: 150px;
+	  }
+	}
+  </style>
