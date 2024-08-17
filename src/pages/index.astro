@@ -1,13 +1,90 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Portada from "../components/Portada.astro";
-import MyUniverse from "../components/MyUniverse.astro";
+import Section from "../components/Section.astro";
+import Section2 from "../components/Section2.astro";
 ---
 
 <Layout title="Oriol Giner Díaz - Software Developer">
   <main>
-    <Portada></Portada>
-    <MyUniverse></MyUniverse>
+    <Portada client:load></Portada>
+    <Section alignment="left" title="Mi Universo" client:load>
+      <div style="max-width: 500px; margin: auto;" slot="text">
+        <p>
+          ¡Hola! Soy Oriol Giner Díaz, un apasionado desarrollador de software
+          con habilidades versátiles. Mi especialidad principal es JavaScript,
+          pero también destaco en PHP y SQL. No puedo olvidar mencionar mi
+          experiencia con Python y mi conocimiento superficial de lenguajes
+          como Java y C++.
+        </p>
+        <p>
+          Además de mi trabajo freelance, dedico parte de mi tiempo como
+          voluntario en la ADF Aviñonet, ¡una experiencia gratificante!
+        </p>
+        <p>
+          No puedo dejar de mencionar mis logros con Dart, con el que he
+          llevado a cabo dos proyectos emocionantes.
+        </p>
+        <p>
+          Entre mis creaciones, destaca el videojuego de plataformas
+          «Adventure Jam», desarrollado con Unity y C#. ¡Fue un desafío
+          divertido y exitoso!
+        </p>
+        <p>
+          Sin olvidar un traductor de lenguaje de signos (Tech Gesture) que
+          con solo una webcam y inteligencia artificial consigue traducir todo
+          el alfabeto dactológico y palabras básicas. Con este proyecto gané
+          varios premios.
+        </p>
+        <p>
+          Actualmente, estoy inmerso en la creación de un emocionante proyecto
+          utitizando Arduino y Flutter.
+        </p>
+        <p>
+          Por último, pero no menos importante, tengo un sólido dominio en el
+          desarrollo de backends utilizando NodeJS y Python, respaldado por un
+          proyecto que lo demuestra. ¡Estoy aquí para llevar la programación a
+          un nivel más emocionante!
+        </p>
+      </div>
+      <div class="row" slot="media">
+        <div class="col-7">
+          <iframe
+            loading="lazy"
+            width="100%"
+            style="max-width: 560px;"
+            height="315"
+            class="mx-auto"
+            src="https://www.youtube.com/embed/GwugyTul0IA?si=hs0hQniiAH2YIZPv"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+        <div class="col-5">
+          <iframe
+            loading="lazy"
+            class="mx-auto"
+            style="max-width: 350px;"
+            width="100%"
+            height="607"
+            src="https://www.youtube.com/embed/TfggkWp9IaY"
+            title="Ors Lamp"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </Section>
+    <Section2 alignment="right" title1="BIO" title2="MY APROACH" client:visible>
+      <div slot="text1" class="text-left">
+        <p>
+          Soy 
+        </p>
+      </div>
+    </Section2>
   </main>
 </Layout>
 

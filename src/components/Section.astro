@@ -1,0 +1,25 @@
+---
+const {alignment = 'left', title} = Astro.props;
+const order1 = alignment == 'left' ? 1 : 2;
+const order2 = alignment == 'left' ? 2 : 1;
+---
+
+<div class="background">
+  <div class="container py-5">
+    <div class="row text-center">
+      <div class="col-12 col-md-5" style=`order: ${order1};`>
+        <h4 class="title">{title}</h4>
+        <vertical-bar></vertical-bar>
+        <slot name="text"></slot>
+      </div>
+      <div class="col-12 col-md-7 my-2 my-md-0 text-center" style=`order: ${order2};`>
+        <slot name="media"></slot>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  p {
+    margin-bottom: 1em;
+  }
+</style>
