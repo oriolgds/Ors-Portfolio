@@ -7,8 +7,8 @@ import Section2 from "../components/Section2.astro";
 
 <Layout title="Oriol Giner Díaz - Software Developer">
   <main>
-    <Portada client:load />
-    <Section alignment="left" title="Mi Universo" id="universe" client:load>
+    <Portada />
+    <Section alignment="left" title="Mi Universo" id="universe">
       <div
         style="max-width: 500px; margin: auto;"
         class="mb-3 mb-md-0"
@@ -54,7 +54,7 @@ import Section2 from "../components/Section2.astro";
         </div>
       </div>
     </Section>
-    <Section2 alignment="right" title1="BIO" title2="MY APROACH" client:visible>
+    <Section2 alignment="right" title1="BIO" title2="MY APROACH">
       <div slot="text1" class="text-left">
         <style>
           p {
