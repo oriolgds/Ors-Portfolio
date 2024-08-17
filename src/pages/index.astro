@@ -7,48 +7,26 @@ import Section2 from "../components/Section2.astro";
 
 <Layout title="Oriol Giner Díaz - Software Developer">
   <main>
-    <Portada client:load></Portada>
-    <Section alignment="left" title="Mi Universo" client:load>
-      <div style="max-width: 500px; margin: auto;" slot="text">
+    <Portada client:load />
+    <Section alignment="left" title="Mi Universo" id="universe" client:load>
+      <div
+        style="max-width: 500px; margin: auto;"
+        class="mb-3 mb-md-0"
+        slot="text"
+      >
         <p>
-          ¡Hola! Soy Oriol Giner Díaz, un apasionado desarrollador de software
-          con habilidades versátiles. Mi especialidad principal es JavaScript,
-          pero también destaco en PHP y SQL. No puedo olvidar mencionar mi
-          experiencia con Python y mi conocimiento superficial de lenguajes
-          como Java y C++.
+          ¡Bienvenido a mi universo! Aquí descubrirás un poco más sobre mí, mis
+          pasiones y lo que me inspira cada día. ¡Disfruta del recorrido!
         </p>
-        <p>
-          Además de mi trabajo freelance, dedico parte de mi tiempo como
-          voluntario en la ADF Aviñonet, ¡una experiencia gratificante!
-        </p>
-        <p>
-          No puedo dejar de mencionar mis logros con Dart, con el que he
-          llevado a cabo dos proyectos emocionantes.
-        </p>
-        <p>
-          Entre mis creaciones, destaca el videojuego de plataformas
-          «Adventure Jam», desarrollado con Unity y C#. ¡Fue un desafío
-          divertido y exitoso!
-        </p>
-        <p>
-          Sin olvidar un traductor de lenguaje de signos (Tech Gesture) que
-          con solo una webcam y inteligencia artificial consigue traducir todo
-          el alfabeto dactológico y palabras básicas. Con este proyecto gané
-          varios premios.
-        </p>
-        <p>
-          Actualmente, estoy inmerso en la creación de un emocionante proyecto
-          utitizando Arduino y Flutter.
-        </p>
-        <p>
-          Por último, pero no menos importante, tengo un sólido dominio en el
-          desarrollo de backends utilizando NodeJS y Python, respaldado por un
-          proyecto que lo demuestra. ¡Estoy aquí para llevar la programación a
-          un nivel más emocionante!
+        <p style="margin-top: 1em;">
+          <b>Dato curioso:</b> cuando no estoy programando o resolviendo problemas
+          de código, estoy probablemente intentando que mis plantas no mueran o pensando
+          en el próximo gran proyecto que arruinará mi sueño. ¡Pero oye, al menos
+          siempre hay café!
         </p>
       </div>
       <div class="row" slot="media">
-        <div class="col-7">
+        <div class="col-12 col-md-7 mb-4 mb-md-0">
           <iframe
             loading="lazy"
             width="100%"
@@ -62,7 +40,7 @@ import Section2 from "../components/Section2.astro";
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen></iframe>
         </div>
-        <div class="col-5">
+        <div class="col-12 col-md-5">
           <iframe
             loading="lazy"
             class="mx-auto"
@@ -80,14 +58,57 @@ import Section2 from "../components/Section2.astro";
     </Section>
     <Section2 alignment="right" title1="BIO" title2="MY APROACH" client:visible>
       <div slot="text1" class="text-left">
+        <style>
+          p {
+            margin-bottom: 1em;
+          }
+        </style>
         <p>
-          Soy 
+          ¡Hola! Soy Oriol Giner Díaz, un desarrollador de software apasionado y
+          versátil. Aunque mi especialidad es JavaScript, también tengo un
+          sólido dominio en PHP y SQL. Además, cuento con experiencia en Python
+          y conocimientos básicos de Java y C++.
+        </p>
+
+        <p>
+          Mi carrera no se limita solo al trabajo freelance; también dedico
+          tiempo al voluntariado en la ADF Aviñonet, una experiencia que me
+          resulta muy gratificante.
+        </p>
+
+        <p>
+          Me enorgullece destacar mis logros con Dart, donde he completado dos
+          proyectos emocionantes, y uno de mis mayores éxitos ha sido el
+          desarrollo de «Adventure Jam», un videojuego de plataformas creado con
+          Unity y C#, que resultó ser un desafío divertido y exitoso.
+        </p>
+
+        <p>
+          Otro proyecto notable en mi portafolio es <strong>Tech Gesture</strong
+          >, un traductor de lenguaje de signos que utiliza inteligencia
+          artificial y una simple webcam para traducir el alfabeto dactilológico
+          y palabras básicas. Este proyecto ha sido reconocido con varios
+          premios.
+        </p>
+
+        <p>
+          Actualmente, estoy inmerso en la creación de un emocionante proyecto
+          que combina Arduino y Flutter.
+        </p>
+
+        <p>
+          Además de mi trabajo en desarrollo, también me apasiona el modelado 3D
+          con Blender y la impresión 3D. ¡Es increíble llevar ideas del mundo
+          digital al físico con solo unos clics!
+        </p>
+
+        <p>
+          Por último, tengo un sólido conocimiento en el desarrollo de backends,
+          especialmente con NodeJS y Python, respaldado por un proyecto
+          destacado que demuestra mi capacidad en este ámbito. ¡Estoy listo para
+          llevar la programación a un nivel más emocionante!
         </p>
       </div>
     </Section2>
   </main>
 </Layout>
-
-
-
-
