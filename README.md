@@ -1,54 +1,86 @@
-# Astro Starter Kit: Basics
+# Oriol Giner - Portafolio Personal
 
-```sh
-npm create astro@latest -- --template basics
-```
+Bienvenido al repositorio de mi portafolio personal. Este proyecto está construido utilizando [Astro](https://astro.build/), un moderno framework de desarrollo web que permite crear sitios web rápidos y eficientes.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Descripción
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Este es mi portafolio personal donde muestro mis proyectos, habilidades y experiencia. La idea principal de este sitio es tener un lugar donde pueda exhibir mi trabajo, proporcionar una manera para que los posibles empleadores o colaboradores se pongan en contacto conmigo, y también compartir un poco sobre mí y mis intereses.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Características
 
-## 🚀 Project Structure
+- **Rápido y eficiente**: Utiliza Astro para una carga rápida de páginas y una experiencia de usuario fluida.
+- **Responsivo**: Diseño adaptable que se ve bien en dispositivos móviles y de escritorio.
+- **SEO optimizado**: Configuraciones de SEO para asegurar que el sitio sea fácil de encontrar en los motores de búsqueda.
+- **Fácil de mantener**: Estructura de código clara y modular que facilita la actualización y el mantenimiento.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Instalación y Configuración
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Para clonar y ejecutar este proyecto localmente, sigue estos pasos:
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+1. **Clona el repositorio:**
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+   ```bash
+   git clone https://github.com/oriolgds/Ors-Portfolio.git
+   ```
 
-Any static assets, like images, can be placed in the `public/` directory.
+2. **Navega al directorio del proyecto:**
 
-## 🧞 Commands
+   ```bash
+   cd Ors-Portfolio
+   ```
 
-All commands are run from the root of the project, from a terminal:
+3. **Instala las dependencias:**
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+   ```bash
+   npm install
+   ```
 
-## 👀 Want to learn more?
+4. **Ejecuta el servidor de desarrollo:**
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+   ```bash
+   npm run dev
+   ```
+
+5. **Abre tu navegador y navega a la URL que se especifica en terminal:**
+
+## Despliegue
+
+Este proyecto puede ser desplegado en una variedad de plataformas de alojamiento estático. Algunos ejemplos incluyen:
+
+- [Netlify](https://www.netlify.com/)
+- [Vercel](https://vercel.com/)
+- [GitHub Pages](https://pages.github.com/)
+
+Para desplegar en Vercel, por ejemplo:
+
+1. **Crea una cuenta en Vercel** (si no tienes una).
+2. **Conecta tu repositorio** a Vercel.
+3. **Configura las opciones de despliegue** como se indica en la documentación de Astro.
+4. **Despliega** tu sitio con un solo clic.
+
+## Tecnologías Utilizadas
+
+- **Astro**: Framework principal utilizado para construir el sitio.
+- **HTML5 y CSS3**: Para el marcado y estilos básicos.
+- **JavaScript**: Para la interacción y funcionalidades adicionales.
+- **Markdown**: Utilizado para el contenido de los blogs (si corresponde).
+
+## Contribuciones
+
+Las contribuciones son bienvenidas. Si tienes ideas para mejorar este portafolio o encuentras algún problema, no dudes en abrir un *issue* o enviar un *pull request*.
+
+1. **Haz un fork de este repositorio**
+2. **Crea una rama para tu característica o arreglo de bug**
+3. **Envía un pull request**
+
+## Contacto
+
+Si tienes alguna pregunta o deseas contactar conmigo, puedes hacerlo a través de [mi correo electrónico](mailto: oriolginger2008@gmail.com).
+
+## Licencia
+
+Este proyecto está licenciado bajo la [Licencia MIT](LICENSE).
+
+---
+
+¡Gracias por visitar mi portafolio!
