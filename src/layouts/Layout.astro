@@ -3,6 +3,7 @@ interface Props {
   title: string;
 }
 const { title } = Astro.props;
+import Footer from '../components/Footer.astro';
 ---
 
 <!doctype html>
@@ -51,10 +52,14 @@ const { title } = Astro.props;
       </nav>
     </div>
     <slot />
+    <Footer></Footer>
     
   </body>
 </html>
 <style is:global>
+  body {
+    overflow-x: hidden;
+  }
   :root {
     --black: #0a1704;
     --dark-green: #193b0a;
@@ -272,6 +277,19 @@ const { title } = Astro.props;
   @media (prefers-reduced-motion: no-preference) {
     .al-1 {
       animation: al-1 linear both;
+      animation-timeline: view();
+      animation-range: 20vh 70vh;
+    }
+  }
+  @keyframes ar-1 {
+    from {
+      transform: translateX(50px);
+      filter: opacity(0);
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .ar-1 {
+      animation: ar-1 linear both;
       animation-timeline: view();
       animation-range: 20vh 70vh;
     }
