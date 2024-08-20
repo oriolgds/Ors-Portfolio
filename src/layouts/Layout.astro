@@ -60,6 +60,7 @@ const { title } = Astro.props;
     --dark-green: #193b0a;
     --background: #0a1704;
     --yellow: #e1b62f;
+    --yellow-rgb: 225, 182, 47;
     --cream: #f8ecc5;
     --white-decorations: #efefef;
   }
@@ -245,4 +246,34 @@ const { title } = Astro.props;
       filter: opacity(1);
       transform: translateY(0px);
     }
+</style>
+
+<!-- Scroll animations -->
+<style is:global>
+  @keyframes ab-1 {
+    from {
+      transform: translateY(20px);
+      filter: opacity(0);
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .ab-1 {
+      animation: ab-1 linear both;
+      animation-timeline: view();
+      animation-range: 0vh 50vh;
+    }
+  }
+  @keyframes al-1 {
+    from {
+      transform: translateX(-50px);
+      filter: opacity(0);
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .al-1 {
+      animation: al-1 linear both;
+      animation-timeline: view();
+      animation-range: 20vh 70vh;
+    }
+  }
 </style>

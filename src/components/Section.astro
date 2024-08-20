@@ -8,9 +8,11 @@ const order2 = alignment == 'left' ? 2 : 1;
   <div class="container py-5">
     <div class="row text-center">
       <div class="col-12 col-md-5" style=`order: ${order1};`>
-        <h4 class="title">{title}</h4>
-        <vertical-bar></vertical-bar>
-        <slot name="text"></slot>
+        <h4 class="title ab-1">{title}</h4>
+        <vertical-bar class="ab-1"></vertical-bar>
+        <div class="ab-1">
+          <slot name="text"></slot>
+        </div>
       </div>
       <div class="col-12 col-md-7 my-2 my-md-0 text-center" style=`order: ${order2};`>
         <slot name="media"></slot>
