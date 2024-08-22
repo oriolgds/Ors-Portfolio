@@ -1,5 +1,5 @@
 ---
-const posts = await Astro.glob('../pages/md/work/*.md');
+const posts =  (await Astro.glob('../pages/md/work/*.md')).slice(0,3);
 ---
 
 

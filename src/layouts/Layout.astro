@@ -62,13 +62,13 @@ const { pathname } = new URL(Astro.request.url);
             <a href="/work/">Trabajo</a>
           </li>
           <li class={pathname.startsWith("/contacto") ? "active" : ""}>
-            <a href="/contacto/">Contacto</a>
+            <a href="#contact">Contacto</a>
           </li>
         </ul>
       </nav>
     </div>
     <slot />
-    <Footer />
+    <Footer  />
   </body>
 </html>
 <style is:global>
