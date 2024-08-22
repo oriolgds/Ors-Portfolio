@@ -4,6 +4,7 @@ interface Props {
 }
 const { title } = Astro.props;
 import Footer from '../components/Footer.astro';
+const { pathname } = new URL(Astro.request.url);
 ---
 
 <!doctype html>
@@ -44,12 +45,18 @@ import Footer from '../components/Footer.astro';
         </label></button
       >
       <nav id="nav">
-        <ul>
-          <li class="active">Inicio</li>
-          <li>Trabajo</li>
-          <li>Contacto</li>
-        </ul>
-      </nav>
+  <ul>
+    <li class={pathname === '/' ? 'active' : ''}>
+      <a href="/">Inicio</a>
+    </li>
+    <li class={pathname.startsWith('/work') ? 'active' : ''}>
+      <a href="/work/">Trabajo</a>
+    </li>
+    <li class={pathname.startsWith('/contacto') ? 'active' : ''}>
+      <a href="/contacto/">Contacto</a>
+    </li>
+  </ul>
+</nav>
     </div>
     <slot />
     <Footer></Footer>
